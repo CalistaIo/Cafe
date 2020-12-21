@@ -9,21 +9,27 @@ body {
 
 .main-header {
     width: 100%;
+    font-size: 16px;
+    padding: 8px 16px;
     background: black;
+    font-family: 'Roboto', sans-serif;
 }
 
 .main-header > div {
     display: inline-block;
+    vertical-align: middle;
 }
 
 .main-header__brand {
     text-decoration: none;
+    font-size: 30px;
 }
 
 .main-nav {
     display: inline-block;
-    width: 80%;
+    width: 85%;
     text-align: right;
+    vertical-align: middle;
 }
 
 .main-nav__items {
@@ -34,12 +40,40 @@ body {
 
 .main-nav__item {
     display: inline-block;
+    margin: 0px 8px;
+    padding: 8px;
 }
 
 .main-nav__item a {
     text-decoration: none;
+    color: #998d7f;
 }
 
-.main-header a {
+.main-nav__item a:hover,
+.main-nav__item a:active {
     color: white;
 }
+
+.main-nav__item--cta {
+    background: #998d7f;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.main-nav__item--cta a,
+.main-header__brand {
+    color: white;
+}
+
+.main-nav__item--cta:hover,
+.main-nav__item--cta:active {
+    background: white;
+}
+
+.main-nav__item--cta:hover a,
+.main-nav__item--cta:active a {
+    color: #998d7f;
+}
+
+
+
