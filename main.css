@@ -241,7 +241,7 @@ body {
 }
 
 .menu__content {
-    margin: 3rem 2rem;
+    margin: 2rem;
     padding: 2rem;
     color: white;
     background: rgba(0, 0, 0, 0.5);
@@ -300,11 +300,11 @@ body {
 }
 
 #shop {
-    background-color: #dac1c1;
+    background-color: #beb4a7;
     text-align: center;
-    margin: 3rem 2rem;
+    margin: 2rem;
     padding: 2rem 0;
-    border: 1px solid #dac1c1;
+    border: 1px solid #beb4a7;
     border-radius: 5px;
 }
 
@@ -315,12 +315,12 @@ body {
 
 .shop__nav h1 {
     font-size: 2rem;
-    color: #6d1212;
+    color: #3f301d;
 }
 
 .shop__nav h2 {
     font-size: 1.2rem;
-    color: #6d1212;
+    color: #3f301d;
 }
 
 .shop__nav p {
@@ -340,7 +340,7 @@ body {
 }
 
 .shop__nav__items {
-    border-bottom: 2px solid #6d1212;
+    border-bottom: 2px solid #3f301d;
     padding-bottom: 1rem;
     width: 90%;
 }
@@ -384,6 +384,22 @@ body {
 .shop__items ul p {
     font-weight: 700;
     font-size: 1.2rem;
+    color: #3f301d;
 }
+
+#cooking {
+    padding: 2rem;
+    margin: 2rem;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.8) 20%, transparent), url('images/cooking.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% center;
+    color: white;
+    height: 80vh;
+    text-align: right;
+}
+
+
+
 
 
