@@ -248,16 +248,14 @@ body {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 20%, transparent), url('images/pizza.jpg');
     background-position: center;
     background-size: cover;
-    width: 100%;
 }
 
 .menu__content-information {
-    display: inline-block;
+    width: 45%;
     text-align: center;
     line-height: 1.8rem;
     font-family: 'Roboto', sans-serif;
     padding: 2rem;
-    margin: 0 auto;
 }
 
 .menu__content-information h1 {
@@ -371,14 +369,10 @@ body {
     background-size: cover;
     background-position: 100% center;
     color: white;
-    height: 80vh;
-    position: relative;
 }
 
 .cooking__content {
-    position: absolute;
-    top: 5%;
-    left: 4%;
+    padding: 1rem 2rem;
     width: 40%;
     font-family: 'Roboto', sans-serif;
     line-height: 1.8rem;
