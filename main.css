@@ -245,18 +245,19 @@ body {
     padding: 2rem;
     color: white;
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 20%, transparent), url('images/pizza.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
 }
 
 .menu__content-information {
-    width: 45%;
     display: inline-block;
     text-align: center;
     line-height: 1.8rem;
     font-family: 'Roboto', sans-serif;
-    vertical-align: middle;
     padding: 2rem;
+    margin: 0 auto;
 }
 
 .menu__content-information h1 {
@@ -268,43 +269,13 @@ body {
     font-size: 1.1rem;
 }
 
-.menu__content-images {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 2rem;
-    width: 45%;
-    height: 60vh;
-}
-
-.menu__content-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
-
-.menu__nav {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 10%;
-    color: black;
-    background: rgba(255, 255, 255, 0.5);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-    font-size: 1.6rem;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-}
-
 #shop {
     background-color: #beb4a7;
+    background-color: white;
     text-align: center;
     margin: 2rem;
     padding: 2rem 0;
-    border: 1px solid #beb4a7;
+    border: 2px solid #3f301d;
     border-radius: 5px;
 }
 
@@ -320,6 +291,11 @@ body {
 
 .shop__nav h2 {
     font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.shop__nav h2:hover,
+.shop__nav h2:active {
     color: #3f301d;
 }
 
@@ -390,15 +366,33 @@ body {
 #cooking {
     padding: 2rem;
     margin: 2rem;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0.8) 20%, transparent), url('images/cooking.jpg');
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 20%, transparent), url('images/cooking.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100% center;
     color: white;
     height: 80vh;
-    text-align: right;
+    position: relative;
 }
 
+.cooking__content {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    width: 40%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8rem;
+}
+
+.cooking__content p {
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.cooking__content button {
+    margin-left: 0;
+    margin-top: 2rem;
+}
 
 
 

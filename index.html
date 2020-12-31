@@ -58,23 +58,6 @@
                     myTimer = setInterval(function() {switchSlides()}, 4000);
                 });
 
-                var menuIndex = 1;
-                var menuImages = ['images/pizza.jpg', 'images/pasta.jpg', 'images/steak.jpg'];
-                $('.menu__nav').click(function() {
-                    if (menuIndex >= menuImages.length) {
-                        menuIndex = 0;
-                    }
-                    var oldImage = $('.menu__content-image');
-                    var newImage = $('<img class="menu__content-image" src="' + menuImages[menuIndex] + '">');
-                    newImage.hide();
-                    newImage.fadeIn(1000);
-                    $('.menu__content-images').prepend(newImage);
-                    oldImage.fadeOut(1000, function() {
-                        $(this).remove();
-                    });
-                    menuIndex += 1;
-                });
-
                 $('.shop__nav__item h2').mouseover(function() {
                     if ($(this).parent().hasClass('shop__nav__item__1')) {
                         if ($('.shop__items__food').css('display') == 'none') {
@@ -178,10 +161,6 @@
                             Menu
                         </button>
                     </div>
-                    <div class="menu__content-images">
-                        <img src="images/pizza.jpg" alt="Pizza" class="menu__content-image">
-                        <div class="menu__nav">>></div>
-                    </div>
                 </div>
             </section>
             <section id="shop">
@@ -274,12 +253,9 @@
                             all. Become a part of our passionate community of food-lovers, and be amazed by your inner
                             cooking talent.
                         </p>
-                        <button type="button" class="cooking-button">
+                        <button type="button" class="introduction-button">
                             Know More
                         </button>
-                    </div>
-                    <div class="cooking__content-images">
-
                     </div>
                 </div>
             </section>
