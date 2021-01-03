@@ -63,7 +63,7 @@ body {
 
 .main-nav__item--cta {
     background: #998d7f;
-    border: 1px solid black;
+    border: 1px solid #998d7f;
     border-radius: 8px;
 }
 
@@ -227,7 +227,7 @@ body {
     padding: 0.6rem 1.2rem;
     margin: 1rem;
     border: 1px solid #795548;
-    border-radius: 4px;
+    border-radius: 5px;
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     outline: none;
@@ -242,12 +242,13 @@ body {
 
 .menu__content {
     margin: 2rem;
-    padding: 2rem;
+    padding: 3rem 2rem;
     color: white;
     background: rgba(0, 0, 0, 0.5);
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 20%, transparent), url('images/pizza.jpg');
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 20%, transparent), url('images/pizza.jpg');
     background-position: center;
     background-size: cover;
+    animation: changeBg 4s infinite;
 }
 
 .menu__content-information {
@@ -369,6 +370,7 @@ body {
     background-size: cover;
     background-position: 100% center;
     color: white;
+    /* overflow: auto; */
 }
 
 .cooking__content {
@@ -376,18 +378,125 @@ body {
     width: 40%;
     font-family: 'Roboto', sans-serif;
     line-height: 1.8rem;
+    /* float: right; */
 }
 
-.cooking__content p {
+.cooking__content h1 {
+    font-size: 2rem;
+}
+
+.cooking__content p,
+.signup__content p {
     justify-content: center;
     margin-top: 2rem;
 }
 
-.cooking__content button {
+.cooking__content button,
+.signup__content button {
     margin-left: 0;
     margin-top: 2rem;
 }
 
+#signup {
+    padding: 2rem;
+    margin: 2rem;
+    overflow: auto;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('images/redcoffee.jpg');
+    background: url('images/whitecup.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 80%;
+}
 
+.signup__content {
+    padding: 1rem 2rem;
+    margin: 2rem 1rem;
+    width: 40%;
+    float: right;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.8rem;
+}
+
+.signup__content h1 {
+    font-size: 2rem;
+    color: #3f301d;
+}
+
+.signup__content button:first-of-type {
+    background: white;
+    color: #795548;
+    border: 2px solid #795548;
+}
+
+.signup__content button:first-of-type:hover,
+.signup__content button:first-of-type:active {
+    border-color: #3f301d;
+    color: #3f301d;
+}
+
+footer {
+    color: #998d7f;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.footer__content {
+    margin: 0 auto;
+}
+
+.footer__content div {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2rem;
+}
+
+footer div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer div ul li {
+    margin-top: 1rem;
+}
+
+footer a {
+    text-decoration: none;
+    color: #998d7f;
+}
+
+footer h2 {
+    color: white;
+}
+
+footer input[type="submit"] {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    background: #998d7f;
+    color: white;
+    padding: 0.5rem;
+    border: 1px solid #998d7f;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+footer input[type="submit"]:hover,
+footer input[type="submit"]:active {
+    background: white;
+    color: #998d7f;
+}
+
+footer input[type="text"] {
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5rem;
+}
+
+.fa {
+    margin-right: 0.5rem;
+}
 
 

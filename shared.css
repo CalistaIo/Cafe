@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    background: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header > div {
+    margin-left: 0.6rem;
+}
+
+.main-header > nav {
+    margin-right: 0.6rem;
+}
+
+.main-header__brand {
+    font-family: 'Cedarville Cursive', cursive;
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 1.9rem;
+}
+
+.main-nav__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav__item {
+    margin-left: 1rem;
+    padding: 0.5rem;
+}
+
+.main-nav__item a {
+    text-decoration: none;
+    color: #998d7f;
+}
+
+.main-nav__item a:hover,
+.main-nav__item a:active {
+    color: white;
+    font-weight: bold;
+}
+
+.main-nav__item--cta {
+    background: #998d7f;
+    border: 1px solid #998d7f;
+    border-radius: 8px;
+}
+
+.main-nav__item--cta a,
+.main-header__brand {
+    color: white;
+}
+
+.main-nav__item--cta:hover,
+.main-nav__item--cta:active {
+    background: white;
+}
+
+.main-nav__item--cta:hover a,
+.main-nav__item--cta:active a {
+    color: #998d7f;
+    font-weight: bold;
+}
