@@ -6,8 +6,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="menu.css">
+        <script src="../_js/jquery.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.fa-angle-double-up').parent().click(function() {
+                    window.scrollTo(0, 0);
+                })
+            })
+        </script>
     </head>
 
     <body>
@@ -46,14 +55,14 @@
             <section id="menu-nav">
                 <div>
                     <ul class="menu-nav__items">
-                        <li class="menu-nav__item"><a href="#">Coffee</a></li>
-                        <li class="menu-nav__item"><a href="#">Tea</a></li>
-                        <li class="menu-nav__item"><a href="#">Breakfast</a></li>
-                        <li class="menu-nav__item"><a href="#">Big Bites</a></li>
-                        <li class="menu-nav__item"><a href="#">Pasta</a></li>
-                        <li class="menu-nav__item"><a href="#">Pizza</a></li>
-                        <li class="menu-nav__item"><a href="#">Desserts</a></li>
-                        <li class="menu-nav__item"><a href="#">Bakery</a></li>
+                        <li class="menu-nav__item"><a href="#coffee">Coffee</a></li>
+                        <li class="menu-nav__item"><a href="#tea">Tea</a></li>
+                        <li class="menu-nav__item"><a href="#breakfast">Breakfast</a></li>
+                        <li class="menu-nav__item"><a href="#bigbites">Big Bites</a></li>
+                        <li class="menu-nav__item"><a href="#pasta">Pasta</a></li>
+                        <li class="menu-nav__item"><a href="#pizza">Pizza</a></li>
+                        <li class="menu-nav__item"><a href="#desserts">Desserts</a></li>
+                        <li class="menu-nav__item"><a href="#bakery">Bakery</a></li>
                     </ul>
                 </div>
             </section>
@@ -61,12 +70,36 @@
                 <div id="coffee">
                     <h1>Coffee</h1>
                     <ul>
-                        <li><div><h3>Coffee1</h3></div></li>
-                        <li><div><h3>Coffee2</h3></div></li>
-                        <li><div><h3>Coffee3</h3></div></li>
-                        <li><div><h3>Coffee4</h3></div></li>
-                        <li><div><h3>Coffee5</h3></div></li>
-                        <li><div><h3>Coffee6</h3></div></li>
+                        <li>
+                            <div>
+                                <div><button id="button">Add</button><img src="../images/vanillalatte.jpg" alt="vanilla-latte"></div><div><h3>Coffee1</h3><p>Expresso blended with milk and rich vanilla syrup</p></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div><img src="../images/vanillalatte.jpg" alt="vanilla-latte"></div><div><h3>Coffee2</h3><p>Expresso blended with milk and rich vanilla syrup</p></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div><img src="../images/vanillalatte.jpg" alt="vanilla-latte"></div><div><h3>Coffee3</h3><p>Expresso blended with milk and rich vanilla syrup</p></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div><img src="../images/vanillalatte.jpg" alt="vanilla-latte"></div><div><h3>Coffee4</h3><p>Expresso blended with milk and rich vanilla syrup</p></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div><img src="../images/vanillalatte.jpg" alt="vanilla-latte"></div><div><h3>Coffee5</h3><p>Expresso blended with milk and rich vanilla syrup</p></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <div><img src="../images/vanillalatte.jpg" alt="vanilla-latte"></div><div><h3>Coffee6</h3><p>Expresso blended with milk and rich vanilla syrup</p></div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div id="tea">
@@ -146,6 +179,7 @@
                         <li><div><h3>Bakery6</h3></div></li>
                     </ul>
                 </div>
+                <div id="scrolltop"><i class='fas fa-angle-double-up'></i></div>
             </section>
         </main>
         <footer class="main-footer">
