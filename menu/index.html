@@ -9,17 +9,227 @@
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="menu.css">
+        <link rel="stylesheet" href="../_css/jquery-ui.min.css">
         <script src="../_js/jquery.min.js"></script>
+        <script src="../_js/jquery-ui.min.js"></script>
         <script>
             $(document).ready(function() {
+                $('.product-content-submit input[type="submit"]').prop('disabled', true);
+
                 $('.fa-angle-double-up').parent().click(function() {
                     window.scrollTo(0, 0);
+                });
+
+                /*
+                $('#menu div ul li div div:first-of-type').hover(
+                    function() {
+                        $(this).children('#button').css('display', 'inline');
+                        $(this).children('img').css('opacity', 0.5);
+                    },
+                    function() {
+                        $(this).children('#button').css('display', 'none');
+                        $(this).children('img').css('opacity', 1);
+                    }
+                );
+                */
+
+                function disableModal(evt) {
+                    evt.preventDefault();
+                    $('.order-modal-background').css('display', 'none');
+                    $('.order-modal').hide('slide', {direction: 'right'}, 500);
+                    $('body').css('overflow', 'visible');
+                }
+
+                $('#coffee ul li > div').click(function() {
+                    $('.order-modal-background').css('display', 'block');
+                    $('.order-modal').show('slide', {direction: 'right'}, 500);
+                    $('body').css('overflow', 'hidden');
+                });
+
+                $('.product-content-cancel a').click(function(evt) {
+                    disableModal(evt);
+                });
+
+                $('.order-modal-background').click(function(evt) {
+                    disableModal(evt);
+                });
+                function validateSubmit() {
+                    var isSizeChosen = false;
+                    var isDairyChosen = false;
+                    var isSweetnessChosen = false;
+                    $('.order-size input[type="radio"]').each(function() {
+                        if ($(this).prop('checked')) {
+                            isSizeChosen = true;
+                        }
+                    });
+                    $('.order-dairy input[type="radio"]').each(function() {
+                        if ($(this).prop('checked')) {
+                            isDairyChosen = true;
+                        }
+                    });
+                    $('.order-sweetness input[type="radio"]').each(function() {
+                        if ($(this).prop('checked')) {
+                            isSweetnessChosen = true;
+                        }
+                    });
+                    if (isSizeChosen && isDairyChosen && isSweetnessChosen &&
+                    ($('.product-content-submit div').text() > 0)) {
+                        $('.product-content-submit input[type="submit"]').prop('disabled', false);
+                    } else {
+                        $('.product-content-submit input[type="submit"]').prop('disabled', true);
+                    }
+                }
+
+                $('.order-form input[type="radio"]').click(function() {
+                    validateSubmit();
+                });
+                
+                $('.product-content-submit button').click(function() {
+                    var currQuantity = parseInt($('.product-content-submit div').text(), 10);
+                    $('.product-content-submit div').text(currQuantity);
+                    if ($(this).attr('name') == "plus") {
+                        currQuantity += 1;
+                    } else {
+                        if (currQuantity > 0) {
+                            currQuantity -= 1;
+                        }
+                    }
+                    $('.product-content-submit div').text(currQuantity);
+                    validateSubmit();
+                });
+
+                $('.validated-checkbox input[type="checkbox"]').click(function() {
+                    var isChecked = $(this).prop('checked');
+                    if (isChecked) {
+                        $(this).siblings('input[type="checkbox"]').prop('disabled', true);
+                    } else {
+                        $(this).siblings('input[type="checkbox"]').prop('disabled', false);
+                    }
                 })
             })
         </script>
     </head>
 
     <body>
+        <div class="order-modal-background"></div>
+        <div class="order-modal">
+            <div class="product-content-cancel">
+                <a href="#"><h2>X</h2></a>
+            </div>
+            <div id="product-content">
+                <div class="product-content-intro">
+                    <div class="image-container">
+                        <img src="../images/vanillalatte.jpg" alt="vanilla-latte">
+                    </div>
+                    <div class="product-content-description">
+                        <h1>Vanilla Latte</h1>
+                        <p><strong>7.20 Base price</strong></p>
+                        <p>Expresso blended with milk and rich vanilla syrup</p>
+                    </div>
+                </div>
+                <form method="post" action="../index.html" class="order-form">
+                    <div class="order-size">
+                        <h3>Choice of Size <span class="subdescription">Pick 1</span></h3>
+                        <input type="radio" name="size" value="small" id="order-size-small">
+                        <label for="order-size-small">Small</label>
+                        <br/>
+                        <input type="radio" name="size" value="medium" id="order-size-medium">
+                        <label for="order-size-medium">Medium <span class="subdescription">+0.60</span></label>
+                        <br />
+                        <input type="radio" name="size" value="large" id="order-size-large">
+                        <label for="order-size-large">Large <span class="subdescription">+1.10</span></label>
+                        </div>
+                    <div class="order-dairy">
+                        <h3>Choice of Dairy <span class="subdescription">Pick 1</span></h3>
+                        <input type="radio" name="dairy" value="regular-milk" id="dairy-regular-milk">
+                        <label for="dairy-regular-milk">Regular Milk</label>
+                        <br />
+                        <input type="radio" name="dairy" value="nonfat" id="dairy-nonfat">
+                        <label for="dairy-nonfat">Non Fat</label>
+                        <br />
+                        <input type="radio" name="dairy" value="soymilk" id="dairy-soymilk">
+                        <label for="dairy-soymilk">Soy Milk <span class="subdescription">+1.00</span></label>
+                        <br />
+                        <input type="radio" name="dairy" value="oatmilk" id="dairy-oatmilk">
+                        <label for="dairy-oatmilk">Oat Milk <span class="subdescription">+1.10</span></label>
+                        <br />
+                        <input type="radio" name="dairy" value="coconutmilk" id="dairy-coconutmilk">
+                        <label for="dairy-coconutmilk">Coconut Milk <span class="subdescription">+1.10</span></label>
+                        <br />
+                        <input type="radio" name="dairy" value="breve" id="dairy-breve">
+                        <label for="dairy-breve">Add Breve <span class="subdescription">+1.10</span></label>
+                    </div>
+                    <div class="order-temperature validated-checkbox">
+                        <h3>Choice of Temperature <span class="subdescription">Optional, max 1</span></h3>
+                        <input type="checkbox" name="temperature" value="regular" id="temperature-regular">
+                        <label for="temperature-regular">Regular Temperature</label>
+                        <br />
+                        <input type="checkbox" name="temperature" value="less" id="temperature-less">
+                        <label for="temperature-less">Less Hot</label>
+                        <br />
+                        <input type="checkbox" name="temperature" value="extra" id="temperature-extra">
+                        <label for="temperature-extra">Extra Hot</label>
+                    </div>
+                    <div class="order-expresso validated-checkbox">
+                        <h3>Choice of Expresso <span class="subdescription">Optional, max 1</span></h3>
+                        <input type="checkbox" name="expresso" value="ristretto" id="expresso-ristretto">
+                        <label for="expresso-ristretto">Ristretto</label>
+                        <br />
+                        <input type="checkbox" name="expresso" value="decaf" id="expresso-decaf">
+                        <label for="expresso-decaf">Decaf</label>
+                        <br />
+                        <input type="checkbox" name="expresso" value="regular" id="expresso-regular">
+                        <label for="expresso-regular">Regular Expresso</label>
+                    </div>
+                    <div class="order-sweetness">
+                        <h3>Choice of Sweetness <span class="subdescription">Pick 1</span></h3>
+                        <input type="radio" name="sweetness" value="unsweetened" id="sweetness-unsweetened">
+                        <label for="sweetness-unsweetened">Unsweetened</label>
+                        <br />
+                        <input type="radio" name="sweetness" value="less-sweet" id="sweetness-less-sweet">
+                        <label for="sweetness-less-sweet">Less Sweet</label>
+                        <br />
+                        <input type="radio" name="sweetness" value="regular" id="sweetness-regular">
+                        <label for="sweetness-regular">Regular Sweetness</label>
+                    </div>
+                    <div class="order-foam validated-checkbox">
+                        <h3>Choice of Foam <span class="subdescription">Optional, max 1</span></h3>
+                        <input type="checkbox" name="foam" value="none" id="foam-none">
+                        <label for="foam-none">No Foam</label>
+                        <br />
+                        <input type="checkbox" name="foam" value="extra" id="foam-extra">
+                        <label for="foam-extra">Extra Foam</label>
+                        <br />
+                        <input type="checkbox" name="foam" value="less" id="foam-less">
+                        <label for="foam-less">Less Foam</label>
+                        <br />
+                        <input type="checkbox" name="foam" value="regular" id="foam-regular">
+                        <label for="foam-regular">Regular Foam</label>
+                    </div>
+                    <div class="order-customize">
+                        <h3>Other Customization <span class="subdescription">Optional, max 3</span></h3>
+                        <input type="checkbox" name="customize" value="vanilla-syrup" id="customize-vanilla-syrup">
+                        <label for="customize-vanilla-syrup">Vanilla Syrup</label>
+                        <br />
+                        <input type="checkbox" name="customize" value="white-chocolate" id="customize-white-chocolate">
+                        <label for="customize-white-chocolate">Add White Chocolate <span class="subdescription">+1.10</span></label>
+                        <br />
+                        <input type="checkbox" name="customize" value="extra-expresso" id="customize-extra-expresso">
+                        <label for="customize-extra-expresso">Extra Expresso Shot <span class="subdescription">+1.10</span></label>
+                    </div>
+                    <div>
+                        <h3>Special Instructions <span class="subdescription">Optional</span></h3>
+                        <input type="text" placeholder="E.g. No onions please">
+                    </div>
+                </form>
+            </div>
+            <div class="product-content-submit">
+                <button name="minus">-</button>
+                <div>1</div>
+                <button name="plus">+</button>
+                <input type="submit" name="order-submit" value="Add to Basket">
+            </div>
+        </div>
         <header class="main-header">
             <div>
                 <a href="index.html" class="main-header__brand">
@@ -72,7 +282,7 @@
                     <ul>
                         <li>
                             <div>
-                                <div><button id="button">Add</button><img src="../images/vanillalatte.jpg" alt="vanilla-latte"></div><div><h3>Coffee1</h3><p>Expresso blended with milk and rich vanilla syrup</p></div>
+                                <div><img src="../images/vanillalatte.jpg" alt="vanilla-latte"></div><div><h3>Vanilla Latte</h3><p>Expresso blended with milk and rich vanilla syrup</p></div>
                             </div>
                         </li>
                         <li>

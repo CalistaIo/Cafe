@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Coffee - Artisan Ann</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="menu.css">
+        <link rel="stylesheet" href="coffee.css">
+        <script src="../_js/jquery.min.js"></script>
+    </head>
+    <body>
+        <header class="main-header">
+            <div>
+                <a href="index.html" class="main-header__brand">
+                    Artisan Ann
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="main-nav__items">
+                    <li class="main-nav__item">
+                        <a href="../index.html">HOME</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="../index.html">ABOUT</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="index.html">MENU</a>
+                    </li>
+                    <li class="main-nav__item">
+                        <a href="../index.html">CONTACT</a>
+                    </li>
+                    <li class="main-nav__item main-nav__item--cta">
+                        <a href="../index.html">ORDER ONLINE</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="product-overview">
+                <div id="product-content">
+                    <div id="product-image">
+                        <div class="image-container"></div>
+                    </div>
+                    <div id="product-description">
+                        <h1>Vanilla Latte</h1>
+                        <h3>7.20 Base price</h3>
+                        <p>Expresso blended with milk and rich vanilla syrup</p>
+                        <form method="post" action="../index.html" class="order-form">
+                            <div>
+                                <h3>Choice of Size Pick 1</h3>
+                                <input type="radio" name="size" value="small" id="order-size-small">
+                                <label for="order-size-small">Small</label>
+                                <br/>
+                                <input type="radio" name="size" value="medium" id="order-size-medium">
+                                <label for="order-size-medium">Medium +0.60</label>
+                                <br />
+                                <input type="radio" name="size" value="large" id="order-size-large">
+                                <label for="order-size-large">Large +1.10</label>
+                                </div>
+                            <div>
+                                <h3>Choice of Dairy Pick 1</h3>
+                                <input type="radio" name="dairy" value="regular-milk" id="dairy-regular-milk">
+                                <label for="dairy-regular-milk">Regular Milk</label>
+                                <br />
+                                <input type="radio" name="dairy" value="nonfat" id="dairy-nonfat">
+                                <label for="dairy-nonfat">Non Fat</label>
+                                <br />
+                                <input type="radio" name="dairy" value="soymilk" id="dairy-soymilk">
+                                <label for="dairy-soymilk">Soy Milk +1.00</label>
+                                <br />
+                                <input type="radio" name="dairy" value="oatmilk" id="dairy-oatmilk">
+                                <label for="dairy-oatmilk">Oat Milk +1.10</label>
+                                <br />
+                                <input type="radio" name="dairy" value="coconutmilk" id="dairy-coconutmilk">
+                                <label for="dairy-coconutmilk">Coconut Milk +1.10</label>
+                                <br />
+                                <input type="radio" name="dairy" value="breve" id="dairy-breve">
+                                <label for="dairy-breve">Add Breve +1.10</label>
+                            </div>
+                            <div>
+                                <h3>Choice of Temperature Optional, max 1</h3>
+                                <input type="checkbox" name="temperature" value="regular" id="temperature-regular">
+                                <label for="temperature-regular">Regular Temperature</label>
+                                <br />
+                                <input type="checkbox" name="temperature" value="less" id="temperature-less">
+                                <label for="temperature-less">Less Hot</label>
+                                <br />
+                                <input type="checkbox" name="temperature" value="extra" id="temperature-extra">
+                                <label for="temperature-extra">Extra Hot</label>
+                            </div>
+                            <div>
+                                <h3>Choice of Expresso Optional, max 1</h3>
+                                <input type="checkbox" name="expresso" value="ristretto" id="expresso-ristretto">
+                                <label for="expresso-ristretto">Ristretto</label>
+                                <br />
+                                <input type="checkbox" name="expresso" value="decaf" id="expresso-decaf">
+                                <label for="expresso-decaf">Decaf</label>
+                                <br />
+                                <input type="checkbox" name="expresso" value="regular" id="expresso-regular">
+                                <label for="expresso-regular">Regular Expresso</label>
+                            </div>
+                            <div>
+                                <h3>Choice of Sweetness Pick 1</h3>
+                                <input type="radio" name="sweetness" value="unsweetened" id="sweetness-unsweetened">
+                                <label for="sweetness-unsweetened">Unsweetened</label>
+                                <br />
+                                <input type="radio" name="sweetness" value="less-sweet" id="sweetness-less-sweet">
+                                <label for="sweetness-less-sweet">Less Sweet</label>
+                                <br />
+                                <input type="radio" name="sweetness" value="regular" id="sweetness-regular">
+                                <label for="sweetness-regular">Regular Sweetness</label>
+                            </div>
+                            <div>
+                                <h3>Choice of Foam Optional, max 1</h3>
+                                <input type="checkbox" name="foam" value="none" id="foam-none">
+                                <label for="foam-none">No Foam</label>
+                                <br />
+                                <input type="checkbox" name="foam" value="extra" id="foam-extra">
+                                <label for="foam-extra">Extra Foam</label>
+                                <br />
+                                <input type="checkbox" name="foam" value="less" id="foam-less">
+                                <label for="foam-less">Less Foam</label>
+                                <br />
+                                <input type="checkbox" name="foam" value="regular" id="foam-regular">
+                                <label for="foam-regular">Regular Foam</label>
+                            </div>
+                            <div>
+                                <h3>Other Customization Optional, max 3</h3>
+                                <input type="checkbox" name="customize" value="vanilla-syrup" id="customize-vanilla-syrup">
+                                <label for="customize-vanilla-syrup">Vanilla Syrup</label>
+                                <br />
+                                <input type="checkbox" name="customize" value="white-chocolate" id="customize-white-chocolate">
+                                <label for="customize-white-chocolate">Add White Chocolate +1.10</label>
+                                <br />
+                                <input type="checkbox" name="customize" value="extra-expresso" id="customize-extra-expresso">
+                                <label for="customize-extra-expresso">Extra Expresso Shot +1.10</label>
+                            </div>
+                            <div>
+                                <h3>Special Instructions Optional</h3>
+                                <input type="text" placeholder="E.g. No onions please">
+                            </div>
+                            <div>
+                                <input type="number" name="order-quantity">
+                                <input type="submit" name="order-submit" value="Add to Basket">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="product-recommendations">
+
+                </div>
+            </section>
+        </main>
+        <footer class="main-footer">
+            <div class="footer__content">
+                <div class="newsletter">
+                    <h2>Newsletter</h2>
+                    <p>Sign up for the latest news and offers</p>
+                    <form id="newsletter__form">
+                        <input type="text" name="email" placeholder="Your email" required="required">
+                        <input type="submit" name="newsletter__submit" value="SUBSCRIBE">
+                    </form>
+                </div>
+                <div class="social-media">
+                    <h2>Follow Us</h2>
+                    <a href="#" class="fa-lg fa fa-facebook"></a>
+                    <a href="#" class="fa fa-lg fa-twitter"></a>
+                    <a href="#" class="fa fa-lg fa-instagram"></a>
+                </div>
+                <div class="links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Return & Refund Policy</a></li>
+                        <li><a href="#">Shopping & Delivery Guide</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

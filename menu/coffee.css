@@ -1,0 +1,40 @@
+#product-content {
+    margin-top: 10vh;
+    display: flex;
+}
+
+#product-content {
+    margin-top: 10vh;
+    display: flex;
+}
+
+#product-image {
+    padding: 2rem 1rem;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 45%;
+}
+
+.image-container {
+    background: url('../images/vanillalatte.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 40vmax;
+    height: 40vmax;
+}
+
+#product-description {
+    padding: 2rem 1rem;
+}
+
+#product-description h1 {
+    margin-top: 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-left: 0;
+    margin-bottom: 1rem;
+}
