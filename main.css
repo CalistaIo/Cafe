@@ -347,13 +347,22 @@ body {
 .shop__items ul div {
     width: 100%;
     height: 35vh;
+    width: 15vmax;
+    height: 15vmax;
     display: inline-block;
+    overflow: hidden;
 }
 
 .shop__items ul div img {
     width: 100%;
     height: 100%;
-    filter: grayscale(40%);
+    filter: grayscale(20%);
+    border-radius: 5px;
+}
+
+.shop__items ul div img:hover,
+.shop__items ul div img:active {
+    cursor: pointer;
 }
 
 .shop__items ul p {
